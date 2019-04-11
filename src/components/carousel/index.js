@@ -1,7 +1,11 @@
-import React, { Component, Fragment } from "react";
+import React, {
+  Component,
+  Fragment
+} from "react";
 
 import CarouselSlide from "./CarouselSlide";
-import Countdown from "./Countdown";
+
+import Countdown from "./Countdown";;
 
 class Carousel extends Component {
   render() {
