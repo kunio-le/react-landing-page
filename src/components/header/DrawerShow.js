@@ -1,33 +1,36 @@
 import React from "react";
 
+import { scroller } from "react-scroll";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 
 const DrawerShow = props => {
+  const scrollToElement = element =>
+    scroller.scrollTo(element, {
+      duration: 1500,
+      delay: 100,
+      smooth: true
+    });
   const listItem = [
     {
-      name: "HomePage",
-      linkTo: "#"
+      name: "HomePage"
     },
     {
-      name: "Event",
-      linkTo: "#"
+      name: "VenueInf"
     },
     {
-      name: "Book Ticket",
-      linkTo: "#"
+      name: "Highlight"
     },
     {
-      name: "Location",
-      linkTo: "#"
+      name: "Location"
     }
   ];
   const fullList = (
     <List>
       {" "}
       {listItem.map((item, index) => (
-        <ListItem button key={index} onClick={() => console.log("click")}>
+        <ListItem button key={index} onClick={() => scrollToElement(item.name)}>
           {" "}
           {item.name}{" "}
         </ListItem>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Element } from "react-scroll";
 
 import Header from "./components/header";
 import Carousel from "./components/carousel";
@@ -18,10 +19,18 @@ class App extends Component {
         }}
       >
         <Header />
-        <Carousel />
-        <VenueInf />
-        <Highlight />
-        <Location />
+        <Element name="HomePage">
+          <Carousel />
+        </Element>{" "}
+        <Element name="VenueInf">
+          <VenueInf />
+        </Element>{" "}
+        <Element name="Highlight">
+          <Highlight />
+        </Element>{" "}
+        <Element name="Location">
+          <Location />
+        </Element>{" "}
         <Footer />
       </div>
     );
