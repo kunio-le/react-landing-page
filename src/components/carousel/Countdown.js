@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Fade from "react-reveal";
+
 export class Countdown extends Component {
   state = {
     deadline: "Aug, 2, 2019",
@@ -53,7 +55,10 @@ export class Countdown extends Component {
 
   componentDidMount() {
     const intervalId = setInterval(this.timeCountdownHandler, 1000);
-    this.setState({ ...this.state, intervalId: intervalId });
+    this.setState({
+      ...this.state,
+      intervalId: intervalId
+    });
   }
 
   componentWillUnmount() {
@@ -63,17 +68,20 @@ export class Countdown extends Component {
   render() {
     const { countdownTime } = this.state;
     return (
-      <div className="countdown_wrapper">
-        <div className="countdown_top"> EVENT START IN </div>
-        <div className="countdown_bottom">
-          {countdownTime.map((time, index) => (
-            <div className="countdown_time" key={index}>
-              <div className="countdown_item"> {time.value} </div>
-              <div className="countdown_tag">{time.type} </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Fade left>
+        <div className="countdown_wrapper">
+          <div className="countdown_top"> EVENT START IN </div>{" "}
+          <div className="countdown_bottom">
+            {" "}
+            {countdownTime.map((time, index) => (
+              <div className="countdown_time" key={index}>
+                <div className="countdown_item"> {time.value} </div>{" "}
+                <div className="countdown_tag"> {time.type} </div>{" "}
+              </div>
+            ))}{" "}
+          </div>{" "}
+        </div>{" "}
+      </Fade>
     );
   }
 }

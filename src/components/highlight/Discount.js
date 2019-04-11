@@ -16,7 +16,6 @@ export class Discount extends Component {
   };
   componentDidUpdate() {
     setTimeout(() => this.animateHandler(), 60);
-    console.log(this.state.percentage);
   }
 
   render() {
