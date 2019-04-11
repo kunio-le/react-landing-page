@@ -25,7 +25,7 @@ const VenueInf = () => {
               </div>{" "}
             </div>{" "}
           </Zoom>{" "}
-          <Zoom delay="500">
+          <Zoom delay={500}>
             <div className="vn_item">
               <div className="vn_outer">
                 <div className="vn_inner">
